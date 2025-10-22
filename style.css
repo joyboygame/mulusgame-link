@@ -1,0 +1,322 @@
+/* RESET DASAR (Untuk Kecepatan) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; 
+    line-height: 1.6;
+    background-color: #0d0e13; 
+    color: #e5e5e5; 
+    overflow-x: hidden; /* Mencegah scroll horizontal (mereng) */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* HEADER/NAVBAR */
+.navbar {
+    background-color: #1a1b21; 
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 5px rgba(0, 255, 255, 0.2); 
+    padding-left: 5%; 
+    padding-right: 5%;
+}
+
+.navbar .logo-img {
+    height: 40px; 
+    vertical-align: middle;
+}
+
+/* HERO SECTION (Fokus Utama) */
+.hero-section {
+    text-align: center;
+    padding: 80px 0;
+    /* BACKGROUND GAMBAR PENGHIAS */
+    background: linear-gradient(rgba(13, 14, 19, 0.8), rgba(13, 14, 19, 0.9)), 
+                url('https://i.ibb.co/j9CjKt7c/Desain-tanpa-judul-64.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    border-bottom: 3px solid #00f0ff; 
+}
+
+/* TEMA GLITCH UNTUK H1 - DISIMPLIFIKASI AGAR STABIL */
+.glitch {
+    position: relative;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(1px); 
+}
+
+.glitch::before {
+    left: 1px;
+    text-shadow: -1px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-before 2s infinite linear alternate-reverse; 
+}
+
+.glitch::after {
+    left: -1px;
+    text-shadow: 1px 0 #00f0ff;
+    clip: rect(85px, 450px, 140px, 0);
+    animation: glitch-anim-after 1.8s infinite linear alternate;
+}
+
+.hero-section .tagline {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    color: #a9a9a9;
+}
+
+/* CTA GROUP */
+.cta-group {
+    margin: 30px auto; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px;
+    width: 100%; 
+}
+
+/* Gaya Tombol Primer (Button Styles) */
+.btn-primary {
+    display: block; 
+    background-color: #ff00c1; 
+    color: #fff;
+    padding: 18px 40px;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 0 15px rgba(255, 0, 193, 0.7); 
+    border: 1px solid #00f0ff; 
+    max-width: 400px; 
+    width: 90%; 
+    margin: 0 auto; 
+}
+
+.btn-primary:hover {
+    background-color: #00f0ff;
+    color: #1a1b21;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.9);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid #00f0ff;
+    color: #00f0ff;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.btn-secondary:hover {
+    background-color: #00f0ff;
+    color: #1a1b21;
+}
+
+.btn-tertiary {
+    display: block;
+    background-color: #4CAF50; /* Warna hijau untuk Telegram/Admin */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 300px; 
+    width: 80%; 
+    margin: 0 auto; 
+}
+.btn-tertiary:hover {
+    background-color: #3e8e41; 
+}
+
+
+/* Trust Signal */
+.trust-signal {
+    margin-top: 40px;
+    font-size: 16px;
+    color: #7fffd4; 
+    padding-top: 20px;
+}
+
+/* BONUS SECTION */
+.bonus-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #1a1b21;
+}
+
+.bonus-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #fff;
+    text-shadow: 0 0 5px #00f0ff;
+}
+
+/* KOREKSI TATA LETAK: MENGGUNAKAN CSS GRID (3 KOLOM) */
+.bonus-list {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom sama besar */
+    gap: 30px; /* Jarak antar kotak */
+    margin-bottom: 30px;
+    padding: 0 5%; 
+}
+
+.bonus-item {
+    background-color: #2a2b33; 
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ff00c1; 
+    box-shadow: 0 0 10px rgba(255, 0, 193, 0.3);
+    min-height: 80px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.bonus-item h3 {
+    color: #ffd700; 
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.footer-bonus {
+    color: #a9a9a9;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Styling untuk Konten SEO Jangka Panjang */
+.seo-content-section {
+    padding: 50px 0;
+    background-color: #0d0e13; /* Warna sama dengan body */
+    text-align: left;
+    color: #c0c0c0; /* Teks abu-abu terang agar mudah dibaca */
+}
+
+.seo-content-section h2, 
+.seo-content-section h3 {
+    color: #fff;
+    border-bottom: 2px solid #ff00c1; /* Garis bawah tema glitch */
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    margin-top: 30px;
+}
+
+.seo-content-section p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.seo-content-section ol {
+    list-style-type: decimal;
+    margin: 20px 0 30px 40px;
+}
+
+.seo-content-section ol li {
+    margin-bottom: 10px;
+    color: #7fffd4; /* Warna aqua */
+}
+
+
+/* FOOTER */
+.footer {
+    background-color: #0d0e13;
+    color: #555;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* --- ANIMASI GLITCH KEYFRAMES --- */
+@keyframes glitch-anim-before {
+    0% { clip: rect(72px, 9999px, 86px, 0); }
+    50% { clip: rect(21px, 9999px, 26px, 0); }
+    100% { clip: rect(61px, 9999px, 66px, 0); }
+}
+
+@keyframes glitch-anim-after {
+    0% { clip: rect(85px, 9999px, 140px, 0); }
+    50% { clip: rect(10px, 9999px, 20px, 0); }
+    100% { clip: rect(70px, 9999px, 90px, 0); }
+}
+
+
+/* Media Query untuk Responsif Mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0; 
+    }
+    .glitch {
+        font-size: 30px; 
+        transform: none !important; 
+        animation: none !important; 
+    }
+    .glitch::before, .glitch::after {
+        content: none; 
+    }
+    
+    /* Di HP, Grid menjadi 1 Kolom */
+    .bonus-list {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+        padding: 0 5%;
+    }
+    .bonus-item {
+        min-height: auto; 
+    }
+    
+    .btn-primary {
+        width: 90%; 
+        max-width: 100%;
+        font-size: 18px;
+    }
+    .btn-tertiary {
+        width: 80%;
+        max-width: 100%;
+    }
+    .navbar {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .navbar .logo-img {
+        height: 30px;
+    }
+
+    /* Penyesuaian konten SEO di mobile */
+    .seo-content-section {
+        padding: 30px 0;
+    }
+    .seo-content-section ol {
+        margin-left: 20px;
+    }
+}
