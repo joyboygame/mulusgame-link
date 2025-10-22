@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Sitemap tidak wajib untuk 1 halaman, 
+# tetapi ini adalah praktik terbaik jika di masa depan lo menambah halaman.
+# Disarankan nanti membuat sitemap.xml manual jika situs lo berkembang.
